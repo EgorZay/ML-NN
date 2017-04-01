@@ -12,6 +12,8 @@ y = tf.matmul(x, beta) + alpha  # basic linear model
 cross_entropy = tf.reduce_mean(
   tf.nn.sigmoid_cross_entropy_with_logits(labels=y_true, logits=y)
 )  # labels equals to target, y serves as preds
+# This formulae is needed to escape calculation issues
+
 
 # session run
 ses = tf.Session()
