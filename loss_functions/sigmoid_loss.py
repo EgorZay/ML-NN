@@ -27,7 +27,7 @@ print(sess.run(cross_entropy, {x: [1, 2, 3, 4], y_true: [-5.5, -6.5, 7.5, 8.5]})
 # manual sigmoid function and cross-entropy loss
 
 def sigmoidFunction(pred):
-  return 1 / (np.exp(-pred))
+  return 1. / (1. + np.exp(-pred))
 
 def crossEntropy(y_true, pred=y):
   return np.mean(-np.sum(y_true * np.log(sigmoidFunction(pred))))
