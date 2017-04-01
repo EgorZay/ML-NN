@@ -1,7 +1,7 @@
 import numpy as np
 import tensorflow as tf
 
-x = tf.placeholder(tf.float32, [10.])  # may pass n-dimension list
+x = tf.placeholder(tf.float32)  # may pass n-dimension list
 beta = tf.Variable([1.])  # tf.float32 is implicitly defined; keep dimensions relevant
 alpha = tf.Variable([5.])
 
