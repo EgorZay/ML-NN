@@ -1,4 +1,4 @@
-# ML-NN
+
 ## Machine Learning and Neural Network category
 
 
@@ -11,6 +11,6 @@ Quick guide Q(^,^Q)
 
 
 
-The latter is basically to convert classified outputs to probability outputs. The softmax conversion basically forms probability distribution (see directory) with sum of weights being 1.
+The latter is to convert classified outputs to probability outputs. The softmax conversion basically forms probability distribution (see directory) with sum of weights being 1.
 
 ...
