@@ -5,23 +5,34 @@ Pure-python Levenshtein implementation made by https://github.com/toastdriven
 """
 
 
-def wfi_levenshtein(string_1, string_2):
+def wfi_levenshtein(str1, str2):
     """
     Calculates the Levenshtein distance between two strings.
     This version uses an iterative version of the Wagner-Fischer algorithm.
-    Usage::
-        >>> wfi_levenshtein('kitten', 'sitting')
+    The similarity tends to be closer as the value of the function approaches zero.
+    :param str_1:
+            string
+                first input text used in a similarity calculation
+    :param str_2:
+            string
+                second input text used in a similarity calculation
+    :return:
+            integer
+                Returns a value of a Levenshtein similarity function
+
+    >>> wfi_levenshtein('kitten', 'sitting')
         3
         >>> wfi_levenshtein('kitten', 'kitten')
         0
         >>> wfi_levenshtein('', '')
         0
     """
-    if string_1 == string_2:
+    
+    if str_1 == str_2:
         return 0
 
-    len_1 = len(string_1)
-    len_2 = len(string_2)
+    len_1 = len(str_1)
+    len_2 = len(str_2)
 
     if len_1 == 0:
         return len_2
@@ -29,7 +40,7 @@ def wfi_levenshtein(string_1, string_2):
         return len_1
 
     if len_1 > len_2:
-        string_2, string_1 = string_1, string_2
+        str_2, str_1 = str_1, str_2
         len_2, len_1 = len_1, len_2
 
     d0 = [i for i in range(len_2 + 1)]
@@ -40,7 +51,7 @@ def wfi_levenshtein(string_1, string_2):
         for j in range(len_2):
             cost = d0[j]
 
-            if string_1[i] != string_2[j]:
+            if str_1[i] != str_2[j]:
                 # substitution
                 cost += 1
 
