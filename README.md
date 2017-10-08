@@ -4,6 +4,8 @@ It is know that SVM cannot process string inputs in its default configuration. T
 
 However, the `.fit` method of `SVC` receives not a string array as input (apart from the target variable) but an array of indices that relate to the strings (see __[example](https://github.com/EgorZay/ML-NN/blob/master/custom-string-kernel-svm/example.py)__).
 
+_Still personally debating over square of Levenshtein distance with myself..._
+
 # Machine Learning and Neural Network category
 
 Quick guide Q(^,^Q)
