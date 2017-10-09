@@ -25,11 +25,11 @@ def gram_mat(X1, X2, sigma=0.1):
     assert isinstance(X1, numpy.ndarray), "Class of 'X1' is not 'numpy.ndarray': %r" % X1.__class__
     assert isinstance(X2, numpy.ndarray), "Class of 'X2' is not 'numpy.ndarray': %r" % X2.__class__
     
-    G = np.zeros((X1.shape[0], X2.shape[0]))
+    #G = np.zeros((X1.shape[0], X2.shape[0]))
     
-    for i, x1 in enumerate(X1):
-        for j, x2 in enumerate(X2):
-            G[i, j] = np.exp(- np.sum(np.power((editdistance.eval(Xw[x1], Xw[x2])), 2)) / float(2 * (sigma**2)))
+    #for i, x1 in enumerate(X1):
+    #    for j, x2 in enumerate(X2):
+    #        G[i, j] = np.exp(- np.power((wfi_levenshtein(Xw[x1], Xw[x2]), 2)) / float(2 * (sigma**2)))
 
-    return G
-    
+    #return G
+    return [[np.exp(-gamma * wfi_levenshtein(x1, x2)**2) for x1 in Xw[x1]] for x2 in Xw[x2]]
